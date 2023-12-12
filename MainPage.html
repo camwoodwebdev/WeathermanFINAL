@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Turret+Road:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Hedvig+Letters+Sans&family=Turret+Road:wght@200&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    
+    <style>
+.container2 {
+  border-width: 5px;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  border-color: brown;
+  padding: 10px;
+  margin:auto;
+  align-content: left;
+  font-family: 'Hedvig Letters Sans', sans-serif;
+}
+
+.container {
+  padding:50px;
+  background-color: tan;
+  color:black;
+  border-color: black;
+  font-family: 'Hedvig Letters Sans', sans-serif;
+  border-radius: 0px;
+}
+
+.container2 {
+  border-width: 5px;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  border-color: brown;
+  padding: 10px;
+  margin:auto;
+  align-content: left;
+  font-family: 'Hedvig Letters Sans', sans-serif;
+}
+.Bio {
+  font-size: x-small;
+  padding: 30px;
+  width:fit-content;
+  background-color: brown;
+  color: antiquewhite;
+  margin:auto;
+  align-content: left;
+
+}
+
+.deco {
+  background-color: black;
+  padding: 30px;
+  border-color: brown;
+  display: block;
+  margin: auto;
+  align-items: center;
+}
+
+.Bio {
+  font-size: x-small;
+  padding: 30px;
+  width:fit-content;
+  background-color: brown;
+  color: antiquewhite;
+  margin:auto;
+  align-content: left;
+}
+
+.title {background-color: brown;
+color:white;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.col-sm {width:25%;
+background-color: black;
+color: brown;
+}
+
+h1{
+font-family: 'Turret Road', cursive;
+background-color: brown;
+text-align: center;
+
+}
+
+h2 {font-size: larger;
+  font-family: 'Turret Road', cursive;}
+
+h3 {font-size: small;
+    font-family: 'Cedarville Cursive', cursive;
+  background-color: brown;
+  color:antiquewhite;
+  text-align: center;
+} 
+h5 {
+  border: 10px;
+  padding: 10px;
+  border-color: brown;
+  padding:color(brown);
+  color: brown;
+
+
+}
+table {width:fit-content;
+margin: auto;
+justify-items: center;}
+
+body {background-color: burlywood;
+color:blanchedalmond;
+font-family: 'Turret Road', cursive;}
+
+.titulo2 {
+background-color: black;
+color:brown;
+
+}
+.day .tiempo {
+  font-size: larger;
+  font-style: bold;
+  font-weight: 500;
+  background-color: brown;
+  padding: 50px;
+  margin: 50px;
+  border: 60px;
+  opacity: 40%;
+  font-family: 'Turret Road', cursive;}
+  
+.temperaturaF .temperaturaC {
+
+font-style: bold;
+font-family: 'Turret Road', cursive;
+font-size: larger;
+
+};
+
+.day .tiempo {
+font-size: larger;
+font-style: bold;
+font-weight: 500;
+background-color: brown;
+padding: 50px;
+margin: 50px;
+border: 60px;
+opacity: 40%;
+font-family: 'Turret Road', cursive;}
+
+.search-button:hover {
+  background-color: brown;
+  color: blanchedalmond;
+  font-size: 25px;
+  border-color: tan;
+  color: rgb(51, 37, 20);
+  background-color: rgba(237, 230, 99, 0.938);
+  border-radius: 2px;
+  text-decoration: bold 15px;
+}
+
+.search-button {
+  margin-right: 100px;
+  font-size: 16px;
+  background-color: rgb(51, 37, 20);
+  color: rgba(237, 230, 99, 0.938);
+  border: none;
+  padding: 20px;
+  line-height: 1px;
+  border-radius: 20px;
+}
+
+.search-button:hover {
+  background-color: brown;
+  color: blanchedalmond;
+  font-size: 25px;
+  border-color: tan;
+  color: rgb(51, 37, 20);
+  background-color: rgba(237, 230, 99, 0.938);
+  border-radius: 2px;
+  text-decoration: bold 15px;
+}
+
+.current-city {
+  font-size: 24px;
+  font-weight: 900;
+  margin: 0;
+  text-shadow: grey 5px;
+  color: rgb(51, 37, 20);
+  background-color: rgba(237, 230, 99, 0.938);
+  box-shadow: rgb(103, 88, 62);
+  text-shadow: grey, 5px;
+  margin-right: 20px;
+  border-radius: 2px;
+}
+
+.current-temperature {
+  font-size: 48px;
+  color: brown;
+  text-shadow: grey 5px;
+  background-color: tan;
+  border-color: brown;
+  border-width: 5px;
+  box-shadow: tan;
+  box-shadow: rgb(103, 88, 62), 5px;
+  text-shadow: grey, 5px;
+}
+
+.search-input {
+  background-color: blanchedalmond;
+  border: none;
+  color: grey;
+  font-size: 14px;
+  padding: 15px;
+  width: 75%;
+  border-radius: 10px;
+}
+
+a {
+  color: brown;
+}
+
+.weather-app {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 30px 50px grey;
+}
+
+.current-details strong {
+  color: brown;
+}
+
+.current-details {
+  color: brown;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+footer {
+  border-top: 1px solid blanchedalmond;
+  text-align: center;
+  padding-top: 30px;
+  font-family: 'Turret Road', cursive;
+  color: blanchedalmond;
+}
+
+main {
+  padding: 30px 0;
+  font-family: 'Hedvig Letters Sans', sans-serif;
+}
+
+header {
+  padding-bottom: 30px;
+  font-family: 'Turret Road', cursive;
+}
+
+.current-temperature {
+  font-size: 48px;
+  color: rgb(51, 37, 20);
+  background-color: rgba(237, 230, 99, 0.938);
+
+}
+
+.tail {
+  font-weight: light;
+  font-style: italic;
+  font-family: 'Turret Road', cursive;
+
+}
+
+.quote {
+  font-family: cursive;
+
+}
+
+body {
+  font-family: cursive, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.carpet {
+      background-image: url("shaggy.jpg");
+      background-color: brown;
+      padding: 10px;
+      height: 1000px auto;
+      width: auto;
+      border-radius: 20px;
+
+}
+
+.carpettop {
+  background-image: url("Persian_Rug_Weatherman.jpg");
+      background-color: none;
+      padding: 10px;
+      height: 300px;
+      width: auto;
+      border-radius: 20px;
+
+}
+
+.credits {
+    background-color: burlywood;
+    margin: 30px;
+  
+}
+
+.pic {
+      width: 100px;
+
+}
+
+.pic2 {
+      width: 300px;
+
+}
+
+    </style>
+    <title>My weather application</title>
+  </head>
+  <body>
+    <div class="carpettop">
+    <div style="title">
+      <h1 class="titulo">
+          💣💨Weather Underground💨💣
+      </h1>
+      <h3 style="quote">"You don't need a weatherman to know which way the weather blows" - Bob Dylan</h3>
+      
+      <img src="W_U_S.png" class="deco" width="200px">
+      </br>
+      </div>
+    </div>
+    <div class="weather-app">
+      <header>
+        <form id="search-form">
+            
+          <span class="search">
+          <label>Enter your city, state:</label>
+          <input
+            type="search"
+            placeholder="Enter a city, ST"
+            required
+            class="search-input"
+            id="search-input"
+          />
+          <br>
+          <br>
+          <input type="submit" value="Change City" class="search-button" />
+        </span>
+        </form>
+      </header>
+      <main>
+        <div class="current-weather">
+          <div class="today">
+            <h4 class="current-city" id="current-city">Muscat</h4>
+            <p class="current-details">
+             <strong> <span id="current-date"></span></strong>, <span id="current-description">moderate rain</span> <br />
+              Humidity: <strong id="current-humidity">87</strong>%,<br /> Wind: <strong id="current-wind">7.2</strong>km/h
+            </p>
+          </div>
+          <div class="current-temperature">
+            <span class="current-temperature-icon">☀️</span><span class="current-temperature-value" id="current-temperature"
+              >24</span
+            ><span class="current-temperature-unit">°C</span>
+          </div>
+        </div>
+      </main>
+<footer class="carpet">
+  
+        <h4>Weathermen</h4>
+<br>
+<h5> Produced by: <h5>
+    
+
+      <div class="credits">
+<span><h5><strong>Anchor:</strong> Bill Ayers</h5>
+<img src="Bill_Ayers.jpg" class="pic">
+</span>
+<br>
+<span>
+<h5><strong>Anchor:</strong>B.D.</h5>
+<img src="B_D.jpg" class="pic">
+</span>
+<span>
+<h5><strong>Anchor:</strong>C.D.</h5>
+<img src="C_M.png" class="pic">
+</span>
+<span>
+<h5><strong>Cameraman:</strong>J.J.</h5>
+<img src="J_J.jpg" class="pic">
+</span>
+
+        <p class="tail">
+          Coded by:
+          <a href="#" target="_blank">Cam Wood</a>
+        </p>
+
+        <audio src="Weathermen.mp3" autoplay loop controls>Weatherman - Wu Tang Clan</audio>
+        <br>
+        <br>
+        <br>
+        <img src="Eyeinthesky2.jpg" class="pic2">
+      </div>
+      </footer>
+    </div>
+  </body>
+  <script>function displayTemp(response) {
+    let temperatureElement = document.querySelector("#current-temperature");
+    let temperature = Math.round(response.data.temperature.current);
+    let cityElement = document.querySelector("#current-city");
+    cityElement.innerHTML = response.data.city;
+    temperatureElement.innerHTML = temperature;
+    
+    //update humidity, wind speed etc.
+    let humidityE = document.querySelector("#current-humidity");
+    let humidity = response.data.temperature.humidity;
+    humidityE.innerHTML = humidity;
+  
+    let windE = document.querySelector("#current-wind");
+    let wind = response.data.wind.speed;
+    windE.innerHTML = wind;
+  
+    let descriptionE = document.querySelector("#current-description");
+    let description = response.data.condition.description;
+    descriptionE.innerHTML = description;
+  
+  }
+  
+  //update other functions
+  function displayWeekTemp(response) {
+  
+  
+  
+    let DOW = [
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday"
+    ];
+  
+  };
+  
+  function search(event) {
+    event.preventDefault();
+    let searchInput = document.querySelector("#search-input");
+    let CITY = searchInput.value;
+  
+    let apiKEY = "b2a5adcct04b33178913oc335f405433";
+    let apiURL = `https://api.shecodes.io/weather/v1/current?query=${CITY}&key=${apiKEY}&units=metric`;
+  
+    
+    axios.get(apiURL).then(displayTemp);
+  
+    let apitest=`https://api.shecodes.io/weather/v1/current?query=mecca&key=b2a5adcct04b33178913oc335f405433
+    &units=metric`
+    let apiKEY2 = "6a00870472d2c052717d24a00e219b30";
+    let apitest2 =`https://api.openweathermap.org/data/2.5/forecast?q=medina&appid=4cfa399d06e08b942bfd00c1eded43e4`;
+    let apitest3 =`https://api.openweathermap.org/data/2.5/forecast?q=medina&appid=6a00870472d2c052717d24a00e219b30&units=metric`;
+    let apiURL2=`https://api.openweathermap.org/data/2.5/forecast?q=${CITY}&appid=${apiKEY2}&units=metric`;
+    //axios.get(apiURL2).then(displayWeekTemp);
+  }
+  
+  
+  function formatDate(date) {
+    let minutes = date.getMinutes();
+    let hours = date.getHours();
+    let day = date.getDay();
+  //update this
+   
+    let daysofweek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ];
+  
+    let formatDay = daysofweek[day];
+    console.log(formatDay);
+    return `${formatDay} ${hours}:${minutes}`;
+  }
+  
+  let searchForm = document.querySelector("#search-form");
+  searchForm.addEventListener("submit", search);
+  
+  let currentDateELement = document.querySelector("#current-date");
+  let currentDate = new Date();
+  
+  currentDateELement.innerHTML = formatDate(currentDate);
+  
+  </script>
+</html>
